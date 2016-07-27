@@ -1,0 +1,13 @@
+summary:
+
+
+1 move constructor and move assignment’s mechanism largely depends on compiler, different compiler has different performance.
+
+2. move assignment 
+	if there is a move assignment happen, then if there is a move assignment definition, then use it. if not, but with the copy assignment, the use the copy assignment. if not, use the default =
+
+3. move constructor
+	rarely use….
+	it depends on the intelligence of your compiler.
+		i never saw g++ use it
+	but in http://ideone.com/ZCIAbg there is a snippet running the move constructor.
