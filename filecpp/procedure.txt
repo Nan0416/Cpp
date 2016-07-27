@@ -1,0 +1,12 @@
+1.g++ -c multifile.cpp
+  g++ -c output.cpp # -c Only run preprocess, compile, and assemble steps
+ # after that, there will be two file named multiple.o and output.o
+
+
+2. g++ multifile.o output.o
+# will produce a file name a.out
+
+3 execute a.out
+
+
+# -o denote to rename
