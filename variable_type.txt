@@ -1,0 +1,24 @@
+/*
+    
+    int we=10;
+    delete we;
+   
+     we is not a dynamic variable cannot be deleted
+     
+     however below int* j; j=new int; is a dynamic variable and can be deleted.
+     
+     variable :
+     
+     1. dynamic variable // created by new programmer can determine it creating or disappearing
+     2. automatic varible // in function, no matter main function or user define function, these 
+                        //variables were create automatically when call this function and deleted automatically
+                        // when the function end. of course main function variable will survive in the whole
+                            //process
+     3. global variable // 
+     4.
+     
+    */
+    int* j;
+    j=new int;
+    *j=12;
+    delete j;
