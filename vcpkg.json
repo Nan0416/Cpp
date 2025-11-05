@@ -1,0 +1,12 @@
+{
+  "name": "cpp-demo-project",
+  "version": "1.0.0",
+  "description": "A demo C++ project showcasing modern dependencies with vcpkg",
+  "dependencies": [
+    "cpprestsdk",
+    "fmt",
+    "nlohmann-json",
+    "spdlog",
+    "eigen3"
+  ]
+}
