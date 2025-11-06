@@ -1,0 +1,93 @@
+# ---- Build artifacts ----
+build/
+build-*/
+out/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+CTestTestfile.cmake
+cmake_install.cmake
+Makefile
+
+# Ninja
+.ninja*
+.ninja_deps
+.ninja_log
+
+# Compile commands (generated)
+compile_commands.json
+compile_flags.txt
+
+# ---- vcpkg ----
+# Installed binaries (managed by vcpkg)
+vcpkg_installed/
+**/vcpkg_installed/
+
+# Local vcpkg build artifacts
+.vcpkg-*
+
+# vcpkg buildtrees, packages, downloads
+buildtrees/
+packages/
+downloads/
+
+# If using classic mode you may want to ignore installed/
+installed/
+
+# ---- IDEs / Editors ----
+
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# CLion / JetBrains
+.idea/
+cmake-build-*/
+
+# Xcode
+*.xcworkspace
+*.xcuserstate
+*.xcuserdata/
+
+# Visual Studio
+*.sln
+*.vcxproj*
+*.pdb
+*.obj
+*.idb
+*.opendb
+*.tlog
+*.lastbuildstate
+
+# ---- OS files ----
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# ---- Logs / Temp ----
+*.log
+*.tmp
+
+# ---- Binary outputs ----
+*.exe
+*.out
+*.a
+*.so
+*.dylib
+*.dll
+*.lib
+*.obj
+
+# ---- C/C++ artifacts ----
+*.o
+*.lo
+*.la
+
+# ---- Cache ----
+.cache/

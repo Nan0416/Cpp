@@ -1,28 +1,30 @@
-# Specify the minimum CMake version
-cmake_minimum_required(VERSION 3.15)
+cmake_minimum_required(VERSION 3.20)
+project(cpp_demo_project)
 
-# Define the project name
-project(AwsCppSdkExample)
-
-# Set the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Define the path to the AWS SDK installation
-set(AWSSDK_ROOT_DIR "~/awssdkcpp_install")
+# Find packages installed by vcpkg
+find_package(fmt CONFIG REQUIRED)
+find_package(spdlog CONFIG REQUIRED)
+find_package(nlohmann_json CONFIG REQUIRED)
+find_package(cpprestsdk CONFIG REQUIRED)
+find_package(Eigen3 CONFIG REQUIRED)
 
-# Add the include and library paths
-include_directories("${AWSSDK_ROOT_DIR}/include")
-link_directories("${AWSSDK_ROOT_DIR}/lib")
+# Create the executable
+add_executable(demo_app src/main.cpp)
 
-# Specify the source file
-add_executable(AwsExample main.cpp)
-
-# Link AWS SDK libraries (replace these with the specific libraries you need)
-# Commonly used libraries include aws-cpp-sdk-core, aws-cpp-sdk-s3, etc.
-target_link_libraries(AwsExample
-    aws-cpp-sdk-core
-    aws-cpp-sdk-s3
+# Link libraries
+target_link_libraries(demo_app 
+    PRIVATE 
+    fmt::fmt
+    spdlog::spdlog
+    nlohmann_json::nlohmann_json
+    cpprestsdk::cpprest
+    Eigen3::Eigen
 )
 
-add_custom_target(myclean, COMMAND rm -rf build COMMENT "Clean build")
+# Set output directory
+set_target_properties(demo_app PROPERTIES
+    RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+)
