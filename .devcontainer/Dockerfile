@@ -28,6 +28,7 @@ RUN mkdir aws-sdk-cpp/build
 RUN cd aws-sdk-cpp/build && \
     cmake .. \
     -DCMAKE_BUILD_TYPE=Debug \
+    -DAUTORUN_UNIT_TESTS=OFF \
     -DCMAKE_INSTALL_PREFIX=/home/$USERNAME/awssdkcpp_install \
     -DBUILD_ONLY="s3"
 
